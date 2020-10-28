@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,900&display=swap&subset=japanese");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+a {
+  color: #111;
+  text-decoration: none;
+}
+a:visited {
+  color: #111;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1d3557;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-anime {
+  background-size: 20px 20px;
+  background-image: linear-gradient(
+      rgba(168, 218, 220, 0.2) 1%,
+      rgba(168, 218, 220, 0.2) 5%,
+      transparent 1%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgba(168, 218, 220, 0.2) 1%, rgba(168, 218, 220, 0.2) 5%, transparent 1%, transparent 100%);
+  animation: 64s linear 0s infinite normal none running background-anime;
+}
+
+@keyframes background-anime {
+  100% {
+    background-position: 100%;
+  }
+}
+
+.wrapper {
+  margin: auto;
+  padding: 40px;
+  width: 80%;
+  height: 80%;
+
+  border: solid 1px #457b9d;
+}
+
+.box19 {
+  position: relative;
+}
+.box19:before,
+.box19:after {
+  content: "";
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  display: inline-block;
+}
+.box19:before {
+  border-left: solid 6px #457b9d;
+  border-top: solid 6px #457b9d;
+  top: 5px;
+  left: 10px;
+  animation: 4s ease 0s infinite normal none running border-anime-top;
+}
+.box19:after {
+  border-right: solid 6px #457b9d;
+  border-bottom: solid 6px #457b9d;
+  bottom: 5px;
+  right: 10px;
+  animation: 4s ease 0s infinite normal none running border-anime-bottom;
+}
+@keyframes border-anime-top {
+  50% {
+    top: 15px;
+  }
+}
+@keyframes border-anime-bottom {
+  50% {
+    bottom: 15px;
+  }
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+}
