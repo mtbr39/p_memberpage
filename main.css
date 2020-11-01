@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,900&display=swap&subset=japanese");
 
+/* [color code]
+font #373a40
+back #eeeeee
+theme #686d76
+highlight #19d3da
+*/
+
 * {
     margin: 0px;
     padding: 0px;
@@ -26,22 +33,22 @@ body {
 html {
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
-    color: #111;
+    color: #373a40;
 }
 
 a {
-    color: #111;
+    color: #373a40;
     text-decoration: none;
 }
 a:visited {
-    color: #111;
+    color: #373a40;
 }
 
 .body-wrapper {
     width: 100vw;
     height: 100vh; /* 変数をサポートしていないブラウザのフォールバック */
     height: calc(var(--vh, 1vh) * 100);
-    background-color: gray;
+    background-color: #eeeeee;
 
     display: flex;
     flex-direction: column;
@@ -52,7 +59,7 @@ a:visited {
 
 .flex1_pagetop {
     flex: 1;
-    background-color: #e5e5e5;
+    background-color: #eeeeee;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,12 +71,12 @@ a:visited {
 
 .flex3_footer {
     height: 64px;
-    background-color: #555555;
+    background-color: #686d76;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #e5e5e5;
+    color: #373a40;
 }
 
 iframe {
@@ -80,19 +87,21 @@ iframe {
 .name {
     font-size: 3.2rem;
     font-weight: 100;
+    letter-spacing: 0.4rem;
     display: inline-block;
     transform: scale(1, 1.2);
     word-wrap: break-word;
 }
 #profile_wrapper {
     position: relative;
+    padding: 20px;
     width: 320px;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: 1px solid #e5e5e5;
+    border: 1px solid #eeeeee;
 }
 
 .profile_border {
@@ -105,7 +114,7 @@ iframe {
 }
 
 .anime--blink {
-    border: 1px solid dodgerblue;
+    border: 2px solid #19d3da;
     animation: box-anime 1s linear 0s infinite alternate none running;
 }
 @keyframes box-anime {
@@ -127,3 +136,7 @@ iframe {
 .hide {
     height: 0px;
 }
+
+mix-blend-mode: difference;
+
+/* colorhunt : https://colorhunt.co/palette/202087 */
