@@ -11,18 +11,46 @@
 <body class="body-wrapper">
 
     <div class="flex1_pagetop">
-        <div id="profile_wrapper" v-on:click="profile_click()">
-            <div class="profile_border anime--blink"></div>
+        <div id="profile_wrapper" v-on:click="profile_click()" v-bind:class="{'active-profile':show_profile==1}">
+            <div class="border-anime-blink__outer">
+                <div class="border-anime-blink__inner"></div>
+            </div>
             <div>
-                <span class="name">松原 直利</span>
-                <div class="active_profile" v-bind:class="{'hide':show_profile==0}">a</div>
+                <div>
+                    <span class="name">松原 直利</span>
+                </div>
+
+                <div class="profile__content--hider" v-bind:class="{'hide':show_profile==0}">
+                    <div class="profile__content-wrapper">
+                        <div class="profile__human-img">
+                            <div>
+                                <div class="shape--line"></div>
+                                <div class="shape--dot"></div>
+                            </div>
+                            <div class="shape--slope">
+
+                            </div>
+                            img
+                        </div>
+                        <div class="profile__text-info">
+                            <p>
+                                九州大学電気情報工学科計算機工学課程
+                                POSL（Principles of Software engineering and programming Languages Lab.）
+                            </p>
+
+                            <p>
+                                matubara.naotoshi.234[at]s.kyushu-u.ac.jp
+                            </p>
+                            <p>
+                                ギター, 作曲
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
-    </div>
-
-    <div class="mix-blend">
-
     </div>
 
     <div class="flex2_frame">

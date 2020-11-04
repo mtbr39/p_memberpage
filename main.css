@@ -33,15 +33,15 @@ body {
 html {
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
-    color: #373a40;
+    color: #686d76;
 }
 
 a {
-    color: #373a40;
+    color: #686d76;
     text-decoration: none;
 }
 a:visited {
-    color: #373a40;
+    color: #686d76;
 }
 
 .body-wrapper {
@@ -85,17 +85,44 @@ iframe {
 }
 
 .name {
+    position: relative;
+    margin: 100px;
+    display: block;
+    color: #686d76;
     font-size: 3.2rem;
-    font-weight: 100;
+    font-weight: 900;
     letter-spacing: 0.4rem;
-    display: inline-block;
     transform: scale(1, 1.2);
     word-wrap: break-word;
+    /* text-align: center; */
+    transition: all 1s linear 0s;
 }
+.active-profile .name {
+    color: #eeeeee;
+}
+.name::before {
+    z-index: -1;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 0%;
+    height: 100%;
+    content: "";
+    background-color: #686d76;
+    transition: all 1s linear 0s;
+}
+.active-profile .name::before {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
 #profile_wrapper {
     position: relative;
-    padding: 20px;
-    width: 320px;
+    /* padding: 60px; */
+    width: auto;
     height: auto;
     display: flex;
     justify-content: center;
@@ -104,17 +131,20 @@ iframe {
     border: 1px solid #eeeeee;
 }
 
-.profile_border {
+.border-anime-blink__inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.border-anime-blink__outer {
     position: absolute;
     width: 95%;
     height: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-.anime--blink {
-    border: 2px solid #19d3da;
+.border-anime-blink__outer .border-anime-blink__inner {
+    border: 8px solid #19d3da;
     animation: box-anime 1s linear 0s infinite alternate none running;
 }
 @keyframes box-anime {
@@ -126,8 +156,7 @@ iframe {
     }
 }
 
-.active_profile {
-    color: red;
+.profile__content--hider {
     height: 300px;
     overflow: hidden;
     transition: all 1s ease 0s;
@@ -137,6 +166,56 @@ iframe {
     height: 0px;
 }
 
-mix-blend-mode: difference;
+.profile__content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    width: 0px;
+    overflow: hidden;
+    transition: all 1s ease 0s;
+    animation: anime--content-wrapper--end 0.5s linear 0s 1 normal both running;
+}
+@keyframes anime--content-wrapper--end {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.active-profile .profile__content-wrapper {
+    width: 720px;
+    animation: anime--content-wrapper--start 1.5s linear 0s 1 normal both running;
+}
+@keyframes anime--content-wrapper--start {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.profile__human-img {
+    width: 320px;
+    height: 320px;
+    background-image: url("./img198763.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.profile__text-info {
+    width: 320px;
+    height: 320px;
+}
+
+/* mix-blend-mode: difference; */
 
 /* colorhunt : https://colorhunt.co/palette/202087 */

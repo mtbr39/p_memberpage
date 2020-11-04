@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,900&display=swap&subset=japanese");
 
 /* [color code]
-font #52575d
-back #f6f4e6
-theme #41444b
-highlight #fddb3a 
+font #373a40
+back #eeeeee
+theme #686d76
+highlight #19d3da
 */
 
 * {
@@ -33,28 +33,52 @@ body {
 html {
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
-    color: #52575d;
+    color: #373a40;
 }
 
 a {
-    color: #52575d;
+    color: #373a40;
     text-decoration: none;
 }
 a:visited {
-    color: #52575d;
+    color: #373a40;
 }
 
-.anime--blink {
-    border: 1px solid dodgerblue;
-    animation: box-anime 1s linear 0s infinite alternate none running;
+.tag__wrapper {
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-@keyframes box-anime {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+
+.tag__inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.tag__item::before {
+    margin-right: 4px;
+    content: "#";
+    color: #19d3da;
+    font-weight: 900;
+    font-size: 1.8rem;
+}
+.tag__item {
+    display: inline-block;
+    margin: 8px 8px;
+    padding: 6px 16px 8px 12px;
+    background-color: #686d76;
+    border: 2px solid #686d76;
+    color: #eeeeee;
+    border-radius: 12px;
+    transition: all 0.2s ease 0s;
+}
+.tag__item:hover {
+    background-color: transparent;
+    color: #19d3da;
+    margin: 6px 8px 10px 8px;
 }
 
 /* colorhunt : https://colorhunt.co/palette/202087 */
