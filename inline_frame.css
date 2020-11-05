@@ -27,6 +27,11 @@ highlight #19d3da
 html {
     font-size: 62.5%;
 }
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 40%;
+    }
+}
 body {
     font-size: 1.6em;
 }
