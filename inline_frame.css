@@ -49,7 +49,12 @@ a:visited {
     color: #373a40;
 }
 
+.high100 {
+    height: 100%;
+}
+
 .tag__wrapper {
+    margin-bottom: 32px;
     position: relative;
     height: auto;
     display: flex;
@@ -58,9 +63,15 @@ a:visited {
 }
 
 .tag__inner {
+    width: 720px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+@media screen and (max-width: 480px) {
+    .tag__inner {
+        width: 300px;
+    }
 }
 
 .tag__item::before {
@@ -84,6 +95,35 @@ a:visited {
     background-color: transparent;
     color: #19d3da;
     margin: 6px 8px 10px 8px;
+}
+
+.news-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.news-inner {
+    width: 400px;
+}
+@media screen and (max-width: 480px) {
+    .news-inner {
+        width: 280px;
+    }
+}
+
+.news-block {
+    margin: 16px 0px;
+}
+
+.date-text {
+    margin-right: 8px;
+    padding: 0px 4px;
+    background-color: #686d76;
+    color: #eeeeee;
+    border-radius: 5px;
+}
+
+.news-text {
 }
 
 /* colorhunt : https://colorhunt.co/palette/202087 */
