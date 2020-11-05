@@ -91,13 +91,15 @@ iframe {
     color: #686d76;
     font-size: 3.2rem;
     font-weight: 900;
-    letter-spacing: 0.4rem;
+    white-space: nowrap;
+    letter-spacing: 0rem;
     transform: scale(1, 1.2);
     word-wrap: break-word;
     /* text-align: center; */
     transition: all 1s linear 0s;
 }
 .active-profile .name {
+    margin: 32px;
     color: #eeeeee;
 }
 .name::before {
@@ -109,6 +111,7 @@ iframe {
     height: 100%;
     content: "";
     background-color: #686d76;
+    border-radius: 20px;
     transition: all 1s linear 0s;
 }
 .active-profile .name::before {
@@ -145,6 +148,7 @@ iframe {
 
 .border-anime-blink__outer .border-anime-blink__inner {
     border: 8px solid #19d3da;
+    border-radius: 20px;
     animation: box-anime 1s linear 0s infinite alternate none running;
 }
 @keyframes box-anime {
@@ -164,6 +168,10 @@ iframe {
 
 .hide {
     height: 0px;
+}
+
+.content-block {
+    padding: 2.5% 10%;
 }
 
 .profile__content-wrapper {
@@ -204,6 +212,7 @@ iframe {
 }
 
 .profile__human-img {
+    position: relative;
     width: 320px;
     height: 320px;
     background-image: url("./img198763.png");
@@ -214,6 +223,48 @@ iframe {
 .profile__text-info {
     width: 320px;
     height: 320px;
+    font-size: 1.4rem;
+}
+
+.shape--triangle {
+    position: absolute;
+    z-index: -2;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 100px 173.2px 100px 0;
+    border-color: transparent #686d76 transparent transparent;
+}
+
+/* .shape--slope {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 120px;
+    height: 120px;
+    border: 20px solid;
+    border-color: transparent transparent transparent #19d3da;
+    transform: rotate(45deg);
+} */
+
+.shape--dot {
+    position: absolute;
+    z-index: -1;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    /* ドット（水玉）模様のCSS */
+    background-image: radial-gradient(#19d3da 30%, transparent 30%);
+    background-size: 8px 8px;
+}
+
+.item-head {
+    display: inline-block;
+    margin: 8px 8px;
+    padding: 6px 16px 8px 12px;
+    border: 2px solid #686d76;
+    border-radius: 12px;
+    transition: all 0.2s ease 0s;
 }
 
 /* mix-blend-mode: difference; */
